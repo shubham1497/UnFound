@@ -52,6 +52,9 @@ if __name__=='__main__':
 
 		ldamodel = gensim.models.ldamodel.LdaModel(corpus, num_topics=5, id2word = dictionary, passes=100)
 		latent = ldamodel.print_topics(num_topics=5, num_words=5)
-		print(latent)
+		k = open('output.txt','w')
+		for j in latent:
+			k.write(str(j)+'\n')
+		k.close()
 		
 		
